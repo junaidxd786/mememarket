@@ -1,0 +1,37 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/*.js
+  Content-Type: application/javascript
+
+/assets/*.css
+  Content-Type: text/css
+
+/assets/*.png
+  Content-Type: image/png
+
+/assets/*.jpg
+  Content-Type: image/jpeg
+
+/assets/*.jpeg
+  Content-Type: image/jpeg
+
+/assets/*.gif
+  Content-Type: image/gif
+
+/assets/*.svg
+  Content-Type: image/svg+xml
+
+/assets/*.ico
+  Content-Type: image/x-icon
+
+/assets/*.woff
+  Content-Type: font/woff
+
+/assets/*.woff2
+  Content-Type: font/woff2
+
+/assets/*.ttf
+  Content-Type: font/ttf
