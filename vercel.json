@@ -11,9 +11,11 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/((?!api/).*)",
       "dest": "/index.html"
     }
   ],
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build"
 }
