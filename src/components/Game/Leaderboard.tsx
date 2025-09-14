@@ -26,8 +26,6 @@ const Leaderboard: React.FC<LeaderboardProps> = ({
       ? (userPortfolio.predictions.filter(p => p.status === 'won').length / userPortfolio.predictions.length) * 100
       : 0;
 
-    const userCompletedPredictions = userPortfolio.predictions.filter(p => p.status !== 'active');
-    const userWins = userCompletedPredictions.filter(p => p.status === 'won').length;
     const userTotalValue = userPortfolio.memeCoins + userPortfolio.stakedCoins;
 
     entries.push({

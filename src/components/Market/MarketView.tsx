@@ -226,7 +226,6 @@ const MarketView: React.FC<MarketViewProps> = ({ gameState, updateGameState }) =
               </div>
 
               <PriceChart
-                postId={selectedPost.id}
                 marketData={getMarketData(selectedPost.id)}
               />
             </motion.div>

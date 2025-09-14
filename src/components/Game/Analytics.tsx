@@ -444,7 +444,7 @@ const Analytics: React.FC<AnalyticsProps> = ({ portfolio, trendingPosts }) => {
           </div>
         ) : (
           <div className="space-y-4">
-            {marketAnalysis.slice(0, 5).map((analysis, index) => (
+            {marketAnalysis.slice(0, 5).map((analysis, _index) => (
               <div key={analysis.subreddit} className="bg-gray-700 rounded-lg p-4">
                 <div className="flex justify-between items-start mb-3">
                   <div>
