@@ -1,0 +1,14 @@
+name: mememarket
+version: 0.0.1
+description: A real-time prediction market where users bet MemeCoins on Reddit posts going viral
+appUserAgent: r/MemeMarket
+platforms:
+  - web
+redditApiVersion: 0.1
+permissions:
+  - posts:read
+  - comments:read
+  - posts:write
+  - comments:write
+  - subreddits:read
+  - users:read
