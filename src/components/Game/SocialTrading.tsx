@@ -9,7 +9,7 @@ interface SocialTradingProps {
   trendingPosts: any[];
 }
 
-const SocialTrading: React.FC<SocialTradingProps> = ({ portfolio, trendingPosts }) => {
+const SocialTrading: React.FC<SocialTradingProps> = ({ trendingPosts }) => {
   const [followedUsers, setFollowedUsers] = useState<string[]>([]);
   const [recentTrades, setRecentTrades] = useState<any[]>([]);
   // Dynamic group management

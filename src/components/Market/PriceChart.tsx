@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -28,11 +27,10 @@ ChartJS.register(
 );
 
 interface PriceChartProps {
-  postId: string;
   marketData: MarketData | null;
 }
 
-const PriceChart: React.FC<PriceChartProps> = ({ postId, marketData }) => {
+const PriceChart: React.FC<PriceChartProps> = ({ marketData }) => {
   const [priceHistory, setPriceHistory] = useState<number[]>([]);
   const [timeLabels, setTimeLabels] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);

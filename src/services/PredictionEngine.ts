@@ -73,7 +73,7 @@ export class PredictionEngine {
       timeOfDay,
       currentUpvotes: post.score,
       currentComments: post.commentCount,
-      growthRate: this.calculateGrowthRate(post, marketData)
+      growthRate: this.calculateGrowthRate(post)
     };
   }
 
@@ -96,7 +96,7 @@ export class PredictionEngine {
     else volatility *= MARKET_DYNAMICS.VOLATILITY_FACTORS.CURRENT_RANKING['51+'];
 
     // Time of day
-    volatility *= MARKET_DYNAMICS.VOLATILITY_FACTORS.TIME_OF_DAY[conditions.timeOfDay];
+    volatility *= MARKET_DYNAMICS.VOLATILITY_FACTORS.TIME_OF_DAY[conditions.timeOfDay as keyof typeof MARKET_DYNAMICS.VOLATILITY_FACTORS.TIME_OF_DAY];
 
     return volatility;
   }
@@ -143,7 +143,7 @@ export class PredictionEngine {
   }
 
   // Calculate current growth rate of a post
-  private calculateGrowthRate(post: RedditPost, marketData: MarketData): number {
+  private calculateGrowthRate(post: RedditPost): number {
     const postAge = (Date.now() - post.created * 1000) / (1000 * 60 * 60); // Hours
     if (postAge <= 0) return 0;
 
@@ -201,7 +201,6 @@ export class PredictionEngine {
 
   // Resolve prediction based on sophisticated win conditions
   resolvePrediction(prediction: Prediction, currentPost: RedditPost, marketData: MarketData): boolean {
-    const conditions = this.analyzeMarketConditions(currentPost, marketData);
     const resolutionTime = prediction.created + (PREDICTION_TIMEFRAMES[prediction.timeframe].hours * 60 * 60 * 1000);
 
     // Only resolve if timeframe has passed

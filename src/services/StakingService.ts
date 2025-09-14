@@ -56,7 +56,6 @@ export class StakingService {
     }
 
     // Claim any pending rewards before unstaking
-    const rewards = this.calculateStakingRewards(portfolio);
     const updatedPortfolio = this.claimRewards(portfolio);
 
     return {

@@ -2,11 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import PostCard from './PostCard';
 import PriceChart from './PriceChart';
-import { GameState, RedditPost, MarketData } from '../../types';
+import { GameState, RedditPost, MarketData, Prediction } from '../../types';
 import { redditAPI } from '../../services/RedditAPI';
 import { marketEngine } from '../../services/MarketEngine';
 import { animations, debounce, calculateLevel } from '../../utils/helpers';
-import { COLORS, GAME_CONFIG } from '../../utils/constants';
+import { GAME_CONFIG } from '../../utils/constants';
 
 interface MarketViewProps {
   gameState: GameState;

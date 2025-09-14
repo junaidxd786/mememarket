@@ -38,7 +38,7 @@ export class TournamentService {
     return tournament;
   }
 
-  joinTournament(tournamentId: string, portfolio: UserPortfolio): { success: boolean; tournament?: Tournament; error?: string } {
+  joinTournament(tournamentId: string, portfolio: UserPortfolio): { success: boolean; tournament?: Tournament; updatedPortfolio?: UserPortfolio; error?: string } {
     const tournament = this.tournaments.find(t => t.id === tournamentId);
 
     if (!tournament) {

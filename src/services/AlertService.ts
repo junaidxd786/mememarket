@@ -1,5 +1,5 @@
-import { Alert, UserPortfolio, Prediction } from '../types';
-import { ALERT_TYPES, ANALYTICS_CONFIG } from '../utils/constants';
+import { Alert, UserPortfolio } from '../types';
+import { ALERT_TYPES } from '../utils/constants';
 
 export class AlertService {
   private static instance: AlertService;
@@ -107,7 +107,7 @@ export class AlertService {
     }
   }
 
-  checkMarketOpportunities(portfolio: UserPortfolio, trendingPosts: any[]): void {
+  checkMarketOpportunities(trendingPosts: any[]): void {
     // Check for high-potential posts
     const highPotentialPosts = trendingPosts.filter(post =>
       post.score > 1000 && post.commentCount > 50
@@ -143,7 +143,7 @@ export class AlertService {
     this.checkExpiringBets(portfolio);
     this.checkStakingRewards(portfolio);
     this.checkTournamentUpdates(portfolio);
-    this.checkMarketOpportunities(portfolio, trendingPosts);
+    this.checkMarketOpportunities(trendingPosts);
     this.checkAchievements(portfolio);
   }
 
