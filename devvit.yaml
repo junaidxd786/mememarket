@@ -4,6 +4,7 @@ description: A real-time prediction market where users bet MemeCoins on Reddit p
 appUserAgent: r/MemeMarket
 platforms:
   - web
+  - reddit
 redditApiVersion: 0.1
 permissions:
   - posts:read
